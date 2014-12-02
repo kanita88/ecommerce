@@ -1,25 +1,121 @@
 body{
-	font-family: 'Indie Flower', cursive;
-	font-size: 1em;
+	font-family: 'Play', sans-serif;
+	font-size: 1.1em;
+	background-image: url(../img/bg-page.jpg);
+	background-size: cover;
 	
 }
 
-section{
+header{
+	margin:10px;
+}
+
+div.main{
 	width: 950px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-h1{
+nav{
+	background-color: black;
+	border: 2px solid #2F4F4F;
+	border-radius: 3px;
+
+}
+
+.img img{
+	padding: 10px;
+	font-size: 60%;
+}
+
+
+/* Je sélectionne les <li> du menu horizontal */
+ul.menu li { 
+	display : inline;
+	padding : 0 0.5em; /* Pour espacer les boutons entre eux */
+	text-decoration: none;
+
+
+
+}
+ul.menu {
+	list-style-type : none; /* Car sinon les puces se placent n'importe où */
 	text-align: center;
+	margin-top: 3px;
+	font-size: 1.7em;
+
 }
 
-div.page h1{
-	text-align: left;
+.menu li a {
+	color: #00BFFF ;
+	text-decoration: none;
+}
+
+.menu li a:hover {
+	color: #00FFFF ;
+	text-decoration: none;
+}
+
+ul.menu1 {
+	list-style-type : none; /* Car sinon les puces se placent n'importe où */
+	margin-top: 3px;
+	font-size: 1.1em;
+}
+
+ul.menu1 li {
+	list-style-image: url(../img/rsz_1obi-wan_lsw3.png);
+	
 }
 
 
+.menu1 li a {
+	color: #1E90FF ;
+	text-decoration: none;
+}
+
+.menu1 li a:hover {
+	color: #00FFFF ;
+	text-decoration: none;
+}
+
+section{
+	float: left;
+	width: 67%;
+	border: 2px solid #2F4F4F;
+	border-radius: 3px;
+	color: #1E90FF;
+	padding: 10px;
+	margin: 9px;
+	background-color: rgba(0,0,0,0.4);
+	
+}
+
+aside form{
+	margin: 2px;
+	padding: 10px;
+	border-bottom: 3px dotted #2F4F4F;
+}
+
+aside h2{
+	text-align: center;
+
+}
+aside{
+	float: right;
+	width: 24%;
+	border: 2px solid #2F4F4F;
+	border-radius: 3px;
+	padding: 10px;
+	margin:9px;
+	background-color: rgba(0,0,0,0.4);
+	
+}
+
+aside div.aside1 a{
+	color: #1E90FF ;
+	text-decoration: none;
 
 
+}
 
 
