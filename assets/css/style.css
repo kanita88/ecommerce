@@ -8,6 +8,7 @@ body{
 
 header{
 	margin:10px;
+
 }
 
 div.main{
@@ -16,7 +17,7 @@ div.main{
 	margin-right: auto;
 }
 
-nav{
+header nav{
 	background-color: black;
 	border: 2px solid #2F4F4F;
 	border-radius: 3px;
@@ -78,6 +79,9 @@ ul.menu1 li {
 	text-decoration: none;
 }
 
+
+/*SECTION  */
+
 section{
 	float: left;
 	width: 67%;
@@ -87,9 +91,36 @@ section{
 	padding: 10px;
 	margin: 9px;
 	background-color: rgba(0,0,0,0.4);
+	display: table-cell;
 	
 }
 
+section .img1{
+	float: left;
+	width: 35%;
+}
+
+section .bienv p{
+	color:white;
+	text-align: justify;
+}
+
+/*PRODUCTS*/
+
+ul.products li {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+
+}
+
+ul.products li a{
+    text-decoration: none;
+
+}
+
+/* ASIDE  */
 aside form{
 	margin: 2px;
 	padding: 10px;
@@ -98,6 +129,7 @@ aside form{
 
 aside h2{
 	text-align: center;
+	color:white;
 
 }
 aside{
@@ -108,6 +140,7 @@ aside{
 	padding: 10px;
 	margin:9px;
 	background-color: rgba(0,0,0,0.4);
+	display: table-cell;
 	
 }
 
@@ -115,7 +148,53 @@ aside div.aside1 a{
 	color: #1E90FF ;
 	text-decoration: none;
 
+}
+
+aside h2 strong{
+	color: #1E90FF;
+}
+
+/* FOOTER */
+
+footer{
+
+	border: 2px solid #2F4F4F;
+	border-radius: 3px;
+	color: #1E90FF;
+	padding: 10px;
+	margin: 9px;
+	background-color: rgba(0,0,0,0.4);
+	
 
 }
 
+footer nav ul.menu2 li { 
+	display : inline;
+	padding : 0 0.5em; /* Pour espacer les boutons entre eux */
+	text-decoration: none;
 
+
+
+}
+footer nav ul.menu2 {
+	list-style-type : none; /* Car sinon les puces se placent n'importe où */
+	text-align: center;
+	margin-top: 3px;
+	font-size: 1em;
+
+}
+
+footer .menu2 li a {
+	color: #00BFFF ;
+	text-decoration: none;
+}
+
+footer .menu2 li a:hover {
+	color: #00FFFF ;
+	text-decoration: none;
+}
+
+footer h6{
+	text-align: center;
+	margin-bottom: 0px;
+}

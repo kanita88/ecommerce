@@ -30,9 +30,14 @@ class Model_UserManager
 		return $this->db->execute ("INSERT INTO user(name,firstname,email,password) values(?,?,?,?)", array($name, $firstname, $email, $password));
 	}
 
-	public function userIsLogged()
+	public function userLogged()
 	{
 		return isset($_SESSION['id']);
+	}
+
+	public function userAdmin()
+	{
+		return (isset($_SESSION['admin']) && $_SESSION['admin'] == 1);	
 	}
 
 } // End Welcome
