@@ -12,7 +12,7 @@
 			<header>
 				<nav>
 					<div class="img">
-						<img src="<?=URL::base()?>/assets/img/logo-retina.png" alt="lego">
+						<a href="<?=URL::base()?>"><img src="<?=URL::base()?>/assets/img/logo-retina.png" alt="lego"></a>
 					</div>
 					<ul class="menu">
 						<li><a href="<?=URL::base()?>">Accueil</a></li>
@@ -33,7 +33,9 @@
 						Ce thème offre de nombreuses possibilités de jeu passionnantes et des occasions d'apprendre et de se développer tout en construisant les véhicules les plus cool de la saga Star Wars. 
 						Avec les ensembles LEGO Star Wars emblématiques, les enfants peuvent construire une galaxie d'aventures extraordinaires, en laissant libre cours à leur imagination. 
 						Chaque boite contient des suggestions pour lancer le jeu et des heures d'amusement sans fin.</p>
-
+					
+					<p>Nos produits sont disponible.. <br>
+						<a href="<?=URL::base()?>product/index"><img src="<?=URL::base()?>/assets/img/Legostarwars1-Logo.png" alt="panier" width="640" height="280"></a> </p>
 					</div>
 				</section>
 
@@ -54,7 +56,7 @@
 					<div>
 					<h2>Catégorie</h2>	
 					<ul class="menu1">
-						<li><a href="#">Tout</a></li>
+						<li><a href="<?=URL::base()?>product/index">Tout</a></li>
 						<li><a href="#">Rebels</a></li>
 						<li><a href="#">Microfighters</a></li>
 						<li><a href="#">TYC</a></li>

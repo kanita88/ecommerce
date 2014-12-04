@@ -12,11 +12,11 @@
 			<header>
 				<nav>
 					<div class="img">
-						<img src="<?=URL::base()?>/assets/img/logo-retina.png" alt="logo">
+						<a href="<?=URL::base()?>"><img src="<?=URL::base()?>/assets/img/logo-retina.png" alt="lego"></a>
 					</div>
 					<ul class="menu">
 						<li><a href="<?=URL::base()?>">Accueil</a></li>
-						<li><a href="#">Produits</a></li>
+						<li><a href="<?=URL::base()?>product/index">Produits</a></li>
 						<li><a href="#">Ventes et offres</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
@@ -47,7 +47,7 @@
 					<div class="cat">
 						<h2>Catégorie</h2>	
 						<ul class="menu1">
-							<li><a href="#">Tout</a></li>
+							<li><a href="<?=URL::base()?>product/index">Tout</a></li>
 							<li><a href="#">Rebels</a></li>
 							<li><a href="#">Microfighters</a></li>
 							<li><a href="#">TYC</a></li>

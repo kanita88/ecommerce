@@ -95,6 +95,11 @@ section{
 	
 }
 
+section label
+{
+	color: white;
+}
+
 section .img1{
 	float: left;
 	width: 35%;
@@ -105,6 +110,22 @@ section .bienv p{
 	text-align: justify;
 }
 
+section h4{
+	color: red;
+}
+
+section .productdetail{
+	width: 80%;
+}
+
+section ul.productdetail li a{
+	text-decoration: none;
+}
+
+section ul.productdetail {
+	list-style-type : none;
+}
+
 /*PRODUCTS*/
 
 ul.products li {
@@ -112,6 +133,7 @@ ul.products li {
     display: inline-block;
     vertical-align: top;
     margin: 10px;
+
 
 }
 
@@ -152,6 +174,10 @@ aside div.aside1 a{
 
 aside h2 strong{
 	color: #1E90FF;
+}
+
+aside .aside1 h2:last-child a{
+	color: red;
 }
 
 /* FOOTER */
