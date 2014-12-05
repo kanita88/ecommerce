@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 04 Décembre 2014 à 17:33
+-- Généré le: Ven 05 Décembre 2014 à 17:11
 -- Version du serveur: 5.5.37-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.2
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `photo` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `product`
@@ -63,14 +63,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `admin` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `firstname`, `email`, `password`, `register_date`, `admin`) VALUES
-(8, 'kanita', 'kanita', 'kanita', '$2y$10$5OlfjV2ErOXW23AfTE4QEOmLqWg.qwwvidJijLJyLzdH7kaNzbele', '2014-12-02 09:00:24', 1);
+(8, 'kanita', 'kanita', 'kanita', '$2y$10$5OlfjV2ErOXW23AfTE4QEOmLqWg.qwwvidJijLJyLzdH7kaNzbele', '2014-12-02 09:00:24', 1),
+(9, 'kathy', 'kathy', 'kathy', '$2y$10$.GA.VPzUtKJHRWNZVFErJu2w08VusX70LKqsxIUQlNT3vrQqUiiNm', '2014-12-05 08:51:43', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
