@@ -3,12 +3,14 @@
 class Controller_Product extends Controller {
 
 	private $productManager;
+	private $userManager;
 	
 
 	function before()
 	{
 		parent::before();
 		$this->productManager = new Model_ProductManager();
+		$this->userManager = new Model_UserManager();
 	}
 
 
@@ -37,9 +39,33 @@ class Controller_Product extends Controller {
 	public function action_addproduct()
 	{
 		session_start();
-		
+		if(isset($_SESSION['admin'])==false || $_SESSION['admin'] !=1 )
+		{
+			$this->redirect('user/login');
+		}
+		if (isset($_POST['name']) && isset($_POST['description']))
+		{
+			
+			$fileName = $_FILES['photo']['name'];
+			$uploaddir='assets/produits/';
+			move_uploaded_file($_FILES['photo']['tmp_name'], $uploaddir.$_FILES['photo']['name']);
+			$product_id = $this->productManager->createProduct($_POST['name'], $_POST['categorie'], 1, $_POST['description'], $_POST['price'], $fileName);		
+			$this->redirect('/product/index');	
+			
+		}
+
 		$view = View::Factory("addproduct");
 		$this->response->body($view);
+	}
+
+	public function action_getcategorie()
+	{
+
+	}
+
+	public function action_viewcart()
+	{
+
 	}
 		
 } // End Welcome

@@ -31,7 +31,7 @@
 							<?php  foreach ($products as $product): ?>
 							<li>
 								<a href="<?=URL::base()?>product/detail/<?= $product['id'] ?>">
-								<img src="<?=URL::base()?>/assets/produits/<?= $product['photo'] ?>" alt="lego1" width="238" height="134">
+								<img src="<?=URL::base()?>assets/produits/<?= $product['photo'] ?>" alt="lego1" width="238" height="134">
 								<h4><?= $product['name'] ?></h4>
 								<p><?= substr ($product['description'],0,200)."<br>"."Voir plus..."; ?></p>
 								<p>Catégories : <?= $product['categorie'] ?></p> 
@@ -71,12 +71,13 @@
 
 						<?php if(isset($_SESSION['name'])) :?>
 						<h2>Bienvenue <strong><?= $_SESSION['name']?></strong></h2>
-						<h2><a href="<?=URL::base()?>/user/logout">Déconnexion</a></h2>
+						<h2><a onclick="return confirm('Etes vous sûre de vouloir vous déconnectez?')" href="<?=URL::base()?>/user/logout">Déconnexion</a></h2>
 						<?php endif ?>
 
 					</div>
 
 					<div class="aside2">
+						
 					<h2>Catégorie</h2>	
 					<ul class="menu1">
 						<li><a href="<?=URL::base()?>product/index">Tout</a></li>
@@ -88,7 +89,7 @@
 						<li><a href="#">Exclusivités</a></li>
 						<li><a href="#">L'ancienne République</a></li>
 					</ul>
-					<?php if(isset($_SESSION['id'])==true): ?>
+					<?php if(isset($_SESSION['admin'])==true): ?>
 					<p><a href="<?=URL::base()?>product/addproduct">Admin</a></p>
 					<?php endif ?>
 					</div>

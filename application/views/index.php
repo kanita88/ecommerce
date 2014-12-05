@@ -48,7 +48,7 @@
 
 						<?php if(isset($_SESSION['name'])) :?>
 						<h2>Bienvenue <strong><?= $_SESSION['name']?></strong></h2>
-						<h2><a href="<?=URL::base()?>/user/logout">Déconnexion</a></h2>
+						<h2><a onclick="return confirm('Etes vous sûre de vouloir vous déconnectez?')" href="<?=URL::base()?>/user/logout">Déconnexion</a></h2>
 						<?php endif ?>
 
 					</div>

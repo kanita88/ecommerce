@@ -26,7 +26,7 @@
 			<section style="width:96%; ">
 				<div class="add">
 					<h1>Ajouter un article</h1>
-					<form action="">
+					<form action="" method="POST" enctype="multipart/form-data">
 					<label for="name">Nom de l'article:</label>
 					<br>
 					<input name="name" type="text" id="name" value="">	
@@ -36,29 +36,29 @@
 					<br>
 					<textarea name="description" rows="10" cols="70" id="inputContent"></textarea>
 					<br>
-					<label for="inputFile">Photo du produits:</label>
+					<label for="photo">Photo du produits:</label>
 					<br>
-					<input name="files[]" multiple type="file" id="inputFile">
+					<input name="photo" multiple type="file" id="photo">
 					<br>
 					<br>
 					<label for="categorie">Catégories:</label>
-								<select name="categorie" id="categorie">
-								<option value="re" selected>Rebels</option>
-								<option value="mi">Microfighters</option>
-								<option value="ty">TYC</option>
-								<option value="cl">Clone Wars</option>
-								<option value="ep">Episodes I-VI</option>
-								<option value="ex">Exclusivités</option>
-								<option value="la">L'ancienne République</option>
-								</select>
+						<select name="categorie" id="categorie">
+						<option value="Rebels" selected>Rebels</option>
+						<option value="Microfighters">Microfighters</option>
+						<option value="TYC">TYC</option>
+						<option value="Clone Wars">Clone Wars</option>
+						<option value="Episodes I-VI">Episodes I-VI</option>
+						<option value="Exclusivités">Exclusivités</option>
+						<option value="L'ancienne République">L'ancienne République</option>
+						</select>
 					<br>
 					<br>
 					<label for="price">Prix:</label>
 					<br>
-					<input name="price" type="text" id="price" placeholder="prix en euros">
+					<input name="price" type="text" id="price" placeholder="prix en euros"> 
 					<br>
 					<br>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" >Submit</button>
 
 					</form>
 					

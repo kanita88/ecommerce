@@ -15,6 +15,7 @@ class Controller_User extends Controller {
 				$_SESSION['name'] = $user['name'];
 				$_SESSION['email'] = $user['email'];
 				$_SESSION['id'] = $user['id'];
+				$_SESSION['admin'] = $user['admin'];
 
 			}
 			$this->redirect('/');

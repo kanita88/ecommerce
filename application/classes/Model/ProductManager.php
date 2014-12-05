@@ -11,19 +11,21 @@ class Model_ProductManager
 
 	public function getProduct($id)
 	{
-		$product=$this->db->QueryOne ('SELECT * FROM product WHERE id = ?', array($id));
+		$product = $this->db->queryOne ('SELECT * FROM product WHERE id = ?', array($id));
 
 		return $product;
 	}
 
-	public function createProduct($name, $quantity, $description, $price)
+	public function createProduct($name, $categorie, $quantity, $description, $price, $photo)
 	{
-		return $this->db->execute ("INSERT INTO product(name,quantity,description,price) values(?,?,?,?)", array($name, $quantity, $description, $price));
+		$product_id = $this->db->execute ("INSERT INTO product(name, categorie, quantity,description,price, photo) values(?,?,?,?,?,?)", array($name, $categorie, $quantity, $description, $price, $photo));
+		
+		return $product_id;
 	}
 
 	public function getlatestproduct($offset=0, $number=6)
 	{
-		$product=$this->db->query('SELECT * FROM product ORDER BY date_create DESC LIMIT '.$offset.','.$number);
+		$product = $this->db->query('SELECT * FROM product ORDER BY date_create DESC LIMIT '.$offset.','.$number);
 
 		return $product;
 	}

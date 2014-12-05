@@ -25,7 +25,7 @@
 			
 			<div class="clearfix">
 				<section>
-					<h1>Veuillez vous connecté :</h1>
+					<h1>Veuillez vous connecter :</h1>
 					<p>Achat un product LEGO de votre choix!</p>
 					
 				</section>
