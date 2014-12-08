@@ -30,15 +30,15 @@
 						<ul class="products">
 							<?php  foreach ($products as $product): ?>
 							<li>
-								<a href="<?=URL::base()?>product/detail/<?= $product['id'] ?>">
 								<img src="<?=URL::base()?>assets/produits/<?= $product['photo'] ?>" alt="lego1" width="238" height="134">
+								<a href="<?=URL::base()?>product/detail/<?= $product['id'] ?>">
 								<h4><?= $product['name'] ?></h4>
 								<p><?= substr ($product['description'],0,200)."<br>"."Voir plus..."; ?></p>
 								<p>Catégories : <?= $product['categorie'] ?></p> 
 								</a>
 								<p>Prix : <?= $product['price'] ?> &euro;</p>
 								
-								<form action="#">
+								<form action="<?=URL::base()?>product/addcart/<?= $product['id'] ?>" method = "POST">
 								<label for="quantity">Quantité</label>
 								<select name="quantity" id="quantity">
 								<option value="1" selected>1</option>
@@ -52,9 +52,10 @@
 								<option value="9">9</option>
 								<option value="10">10</option>
 								</select>
-								</form>
 								<br>
-								<a href="#"><img src="<?=URL::base()?>/assets/img/shopping_basket_add_256.png" alt="panier" width="45" height="45"></a>
+								<button ><img src="<?=URL::base()?>/assets/img/shopping_basket_add_256.png" alt="panier" width="45" height="45"></a>
+								</button>
+								</form>
 							</li>
 							
 							<?php endforeach; ?>
@@ -76,8 +77,33 @@
 
 					</div>
 
+					<p><img src="<?=URL::base()?>/assets/img/Blue_laser.png" alt="panier" width="220" height="30"></p>
+
 					<div class="aside2">
+
+					<h2>Mon panier</h2>
+				
+					<?php if(isset($_SESSION['Cart']) && !empty($_SESSION['Cart'])): ?>
+
+					<?php foreach ($_SESSION['Cart'] as $id_product => $quantity): ?>
+					<?php $product = $productManager->getProduct($id_product) ?>
+
+					<p>Vous avez ajouter le produit:</p>
+					<p><?= $product['name'] ?></p>
+					<p>Quantité : <?= $quantity ?></p>
+					<form action="<?=URL::base()?>product/deleteCart/<?= $product['id'] ?>">
+					<button>Supprimer un article</button>
+					</form>
+					<p><a href="<?=URL::base()?>product/viewcart">Récapitulatif de votre panier</a></p>
+
 						
+					<?php endforeach ?>
+
+					<?php endif ?>
+					
+					 
+					<p><img src="<?=URL::base()?>/assets/img/Blue_laser.png" alt="panier" width="220" height="30"></p>
+
 					<h2>Catégorie</h2>	
 					<ul class="menu1">
 						<li><a href="<?=URL::base()?>product/index">Tout</a></li>

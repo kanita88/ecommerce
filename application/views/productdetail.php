@@ -29,14 +29,14 @@
 					<h1>Les produits en vente</h1>
 						<ul class="productdetail">
 							<li>
-								<a href="">
+								<a href="<?=URL::base()?>/assets/produits/<?= $product['photo'] ?>">
 								<img src="<?=URL::base()?>/assets/produits/<?= $product['photo'] ?>" alt="LegoStarWars" width="238" height="134">
+								Photo, cliquer zoomer..</a>
 								<h4><?= $product['name'] ?></h4>
 								<p><?= $product['description'] ?></p>
 								<p>Catégories : <?= $product['categorie'] ?></p> 
 								<p>Prix : <?= $product['price'] ?> &euro;</p>
-								</a>
-								<form action="#">
+								<form action="<?=URL::base()?>product/addcart/<?= $product['id'] ?>" method = "POST">
 								<label for="quantity">Quantité</label>
 								<select name="quantity" id="quantity">
 								<option value="1" selected>1</option>
@@ -50,9 +50,10 @@
 								<option value="9">9</option>
 								<option value="10">10</option>
 								</select>
-								</form>
 								<br>
-								<a href="#"><img src="<?=URL::base()?>/assets/img/shopping_basket_add_256.png" alt="panier" width="45" height="45"></a>
+								<button ><img src="<?=URL::base()?>/assets/img/shopping_basket_add_256.png" alt="panier" width="45" height="45"></a>
+								</button>
+								</form>
 							</li>
 						</ul>
 					</div>
@@ -71,6 +72,8 @@
 						<?php endif ?>
 
 					</div>
+
+					<p><img src="<?=URL::base()?>/assets/img/Blue_laser.png" alt="panier" width="220" height="30"></p>
 
 					<div class="aside2">
 					<h2>Catégorie</h2>	

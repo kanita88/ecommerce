@@ -100,6 +100,11 @@ section label
 	color: white;
 }
 
+section button{
+	background-color:transparent;
+	border: none;
+}
+
 section .img1{
 	float: left;
 	width: 35%;
@@ -124,6 +129,38 @@ section ul.productdetail li a{
 
 section ul.productdetail {
 	list-style-type : none;
+}
+
+table {
+    
+    margin-bottom:0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    text-align: center;
+}
+
+table thead th{
+    font-weight:bold;
+    font-size: 1.2em;
+    border: 1px dotted;
+    color: white; 
+
+}
+
+tr td{
+	border:1px dotted white;
+	padding: 10px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.4);
+	color: red;
+
+}
+
+tfoot tr th{
+	text-align: right;
+	color: white;
+	border: 1px dotted;
+
 }
 
 /*PRODUCTS*/
@@ -152,6 +189,7 @@ aside form{
 aside h2{
 	text-align: center;
 	color:white;
+	margin-top: 0px;
 
 }
 aside{
@@ -178,6 +216,15 @@ aside h2 strong{
 
 aside .aside1 h2:last-child a{
 	color: red;
+}
+
+aside .aside2 p{
+	color: red;
+
+}
+
+aside .aside p:last-child a{
+	color: white;
 }
 
 /* FOOTER */

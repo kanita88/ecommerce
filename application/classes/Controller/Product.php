@@ -21,6 +21,7 @@ class Controller_Product extends Controller {
 		
 		$view = View::Factory("product");
 		$view->products=$products;
+		$view->productManager = $this->productManager; 
 		$this->response->body($view);
 		
 	}
@@ -58,12 +59,48 @@ class Controller_Product extends Controller {
 		$this->response->body($view);
 	}
 
-	public function action_getcategorie()
+	public function action_addcart()
 	{
+		session_start();
+		if (!isset($_SESSION["Cart"]))
+		{
+			$_SESSION['Cart']=array();
+		}
+		$id = $this->request->param('id');
+		$_SESSION['Cart'][$id] = $_POST['quantity'];
+
+		$this->redirect('/product/index');
+	}
+
+	public function action_deleteCart()
+	{
+		session_start();
+		unset($_SESSION['Cart'][$this->request->param('id')]);
+
+		$this->redirect('/product/index');
 
 	}
 
 	public function action_viewcart()
+	{
+		session_start();
+		if (!isset($_SESSION["Cart"]))
+		{
+			$_SESSION['Cart']=array();
+		}
+		$view = View::Factory("viewcart");
+		$view->products=array();
+		foreach ($_SESSION['Cart'] as $id_product => $quantity)
+		{
+			$product=$this->productManager->getProduct($id_product);
+			$product['quantity']=$quantity;
+			array_push($view->products, $product);
+		}
+		$this->response->body($view);
+		
+	}
+
+	public function action_getcategorie()
 	{
 
 	}
