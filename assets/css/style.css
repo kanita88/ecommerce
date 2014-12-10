@@ -95,6 +95,10 @@ section{
 	
 }
 
+section h1{
+	color: #00BFFF;
+}
+
 section label
 {
 	color: white;
@@ -131,6 +135,32 @@ section ul.productdetail {
 	list-style-type : none;
 }
 
+section p.img img{
+	float: right;
+
+}
+
+section marquee{
+	color:white;
+}
+
+section div.jeux h2,p{
+	text-align: center;
+	color:white;
+}
+section div.pagination{
+	text-align: center;
+}
+
+section div.pagination p{
+	margin: 20px;
+	display: inline;
+	background-color: #778899;
+	padding: 7px;
+	border-radius: 5px;
+
+}
+
 table {
     
     margin-bottom:0px;
@@ -143,12 +173,14 @@ table thead th{
     font-weight:bold;
     font-size: 1.2em;
     border: 1px dotted;
+    background-color: rgba(255,255,255,0.2);
     color: white; 
+
 
 }
 
 tr td{
-	border:1px dotted white;
+	border: 1px dotted white;
 	padding: 10px;
 	text-align: center;
 	background-color: rgba(0,0,0,0.4);
@@ -160,7 +192,103 @@ tfoot tr th{
 	text-align: right;
 	color: white;
 	border: 1px dotted;
+	background-color: rgba(255,255,255,0.2);
 
+}
+
+th select#quantity{
+	color:black;
+}
+
+div.order p{
+	text-align: right;
+
+}
+
+a{
+	color: #00CCFF;
+}
+
+a:hover{
+	color:#E8E8E8;
+}
+
+/*Formulaire de contact*/
+
+div.box {
+
+margin: 30px;
+width:500px;
+background:#222222;
+top:50px;
+border:1px solid #262626;
+
+}
+
+div.box h1 { 
+color:#ffffff;
+font-size:18px;
+text-transform:uppercase;
+padding:5px 0 5px 5px;
+border-bottom:1px solid #161712;
+border-top:1px solid #161712; 
+}
+
+div.box label {
+width:100%;
+display: block;
+background:#1C1C1C;
+border-top:1px solid #262626;
+border-bottom:1px solid #161712;
+padding:10px 0 10px 0;
+}
+
+div.box label span {
+display: block;
+color:#bbbbbb;
+font-size:12px;
+float:left;
+width:100px;
+text-align:right;
+padding:5px 20px 0 0;
+}
+
+div.box .input_text {
+padding:10px 10px;
+width:200px;
+background:#262626;
+border-bottom: 1px double #171717;
+border-top: 1px double #171717;
+border-left:1px double #333333;
+border-right:1px double #333333;
+}
+
+div.box .message{
+padding:7px 7px;
+width:350px;
+background:#262626;
+border-bottom: 1px double #171717;
+border-top: 1px double #171717;
+border-left:1px double #333333;
+border-right:1px double #333333;
+overflow:hidden;
+height:150px;
+}
+
+div.box .button
+{
+margin:0 0 10px 0;
+padding:4px 7px;
+background:#CC0000;
+border:0px;
+position: relative;
+top:10px;
+left:382px;
+width:100px;
+border-bottom: 1px double #660000;
+border-top: 1px double #660000;
+border-left:1px double #FF0033;
+border-right:1px double #FF0033;
 }
 
 /*PRODUCTS*/
@@ -227,6 +355,27 @@ aside .aside p:last-child a{
 	color: white;
 }
 
+aside div.recap button{
+	background-color: #F0F8FF; 
+	border-radius: 10px;
+	margin : 10px;
+}
+
+aside button.sup{
+	margin: 10px;
+	border-radius: 10px;
+
+}
+
+aside div.recap button a{
+	color: black;
+	text-decoration: none;
+}
+
+.aside2 .p1 {
+	color:white;
+}
+
 /* FOOTER */
 
 footer{
@@ -271,3 +420,4 @@ footer h6{
 	text-align: center;
 	margin-bottom: 0px;
 }
+

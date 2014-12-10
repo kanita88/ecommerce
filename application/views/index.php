@@ -17,8 +17,8 @@
 					<ul class="menu">
 						<li><a href="<?=URL::base()?>">Accueil</a></li>
 						<li><a href="<?=URL::base()?>product/index">Produits</a></li>
-						<li><a href="#">Ventes et offres</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="<?=URL::base()?>funzone/">Jeux en ligne</a></li>
+						<li><a href="<?=URL::base()?>contact/">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -57,13 +57,13 @@
 					<h2>Catégorie</h2>	
 					<ul class="menu1">
 						<li><a href="<?=URL::base()?>product/index">Tout</a></li>
-						<li><a href="#">Rebels</a></li>
-						<li><a href="#">Microfighters</a></li>
-						<li><a href="#">TYC</a></li>
-						<li><a href="#">Clone Wars</a></li>
-						<li><a href="#">Episodes I-VI</a></li>
-						<li><a href="#">Exclusivités</a></li>
-						<li><a href="#">L'ancienne République</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/rebels">Rebels</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/microfighters">Microfighters</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/tyc">TYC</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/clone wars">Clone Wars</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/Episodes I-VI">Episodes I-VI</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/Exclusivités">Exclusivités</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/L'ancienne République">L'ancienne République</a></li>
 					</ul>
 
 					</div>

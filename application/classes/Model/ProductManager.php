@@ -30,5 +30,10 @@ class Model_ProductManager
 		return $product;
 	}
 
+	public function getcategorie($categorie)
+	{
+		return $this->db->query('SELECT * FROM product WHERE categorie = ? ',array($categorie));
+	}
+
 
 } // End Welcome

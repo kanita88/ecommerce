@@ -17,8 +17,8 @@
 					<ul class="menu">
 						<li><a href="<?=URL::base()?>">Accueil</a></li>
 						<li><a href="<?=URL::base()?>product/index">Produits</a></li>
-						<li><a href="#">Ventes et offres</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="<?=URL::base()?>funzone/">Jeux en ligne</a></li>
+						<li><a href="<?=URL::base()?>contact/">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -61,6 +61,13 @@
 							<?php endforeach; ?>
 						</ul>
 					</div>
+					<!-- pagination -->
+					
+					<div class="pagination">
+						<p><a href="#" class="button prev" onclick="return false;">Back</a></p>
+    					<p><a href="#" class="button next blue" onclick="return false;">Next</a></p>
+    				</div>	
+					
 				</section>
 
 				<aside>
@@ -85,20 +92,23 @@
 				
 					<?php if(isset($_SESSION['Cart']) && !empty($_SESSION['Cart'])): ?>
 
-					<?php foreach ($_SESSION['Cart'] as $id_product => $quantity): ?>
-					<?php $product = $productManager->getProduct($id_product) ?>
-
-					<p>Vous avez ajouter le produit:</p>
-					<p><?= $product['name'] ?></p>
-					<p>Quantité : <?= $quantity ?></p>
-					<form action="<?=URL::base()?>product/deleteCart/<?= $product['id'] ?>">
-					<button>Supprimer un article</button>
-					</form>
-					<p><a href="<?=URL::base()?>product/viewcart">Récapitulatif de votre panier</a></p>
-
+						<?php foreach ($_SESSION['Cart'] as $id_product => $quantity): ?>
+							<?php $product = $productManager->getProduct($id_product) ?>
+							<p class="p1">Vous avez ajouté le produit:</p>
+							<p><?= $product['name'] ?></p>
+							<p>Quantité : <?= $quantity ?></p>
+							<form action="<?=URL::base()?>product/deleteCart/<?= $product['id'] ?>">
+								<button class="sup">Supprimer cet article</button>
+							</form>
 						
-					<?php endforeach ?>
+							
+						<?php endforeach ?>
 
+						<div class = "recap">
+							<form action="">
+								<button><a href="<?=URL::base()?>product/viewcart">Récapitulatif de votre panier</a></button>
+							</form>
+						</div>
 					<?php endif ?>
 					
 					 
@@ -107,13 +117,13 @@
 					<h2>Catégorie</h2>	
 					<ul class="menu1">
 						<li><a href="<?=URL::base()?>product/index">Tout</a></li>
-						<li><a href="#">Rebels</a></li>
-						<li><a href="#">Microfighters</a></li>
-						<li><a href="#">TYC</a></li>
-						<li><a href="#">Clone Wars</a></li>
-						<li><a href="#">Episodes I-VI</a></li>
-						<li><a href="#">Exclusivités</a></li>
-						<li><a href="#">L'ancienne République</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/rebels">Rebels</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/microfighters">Microfighters</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/tyc">TYC</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/clone wars">Clone Wars</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/Episodes I-VI">Episodes I-VI</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/Exclusivités">Exclusivités</a></li>
+						<li><a href="<?=URL::base()?>product/categorie/L'ancienne République">L'ancienne République</a></li>
 					</ul>
 					<?php if(isset($_SESSION['admin'])==true): ?>
 					<p><a href="<?=URL::base()?>product/addproduct">Admin</a></p>

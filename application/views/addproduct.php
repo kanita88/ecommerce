@@ -17,8 +17,8 @@
 					<ul class="menu">
 						<li><a href="<?=URL::base()?>">Accueil</a></li>
 						<li><a href="<?=URL::base()?>product/index">Produits</a></li>
-						<li><a href="#">Ventes et offres</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="<?=URL::base()?>funzone/">Jeux en ligne</a></li>
+						<li><a href="<?=URL::base()?>contact/">Contact</a></li>
 					</ul>
 				</nav>
 			</header>

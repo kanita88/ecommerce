@@ -23,7 +23,6 @@ class Controller_Product extends Controller {
 		$view->products=$products;
 		$view->productManager = $this->productManager; 
 		$this->response->body($view);
-		
 	}
 
 	public function action_detail()
@@ -77,7 +76,7 @@ class Controller_Product extends Controller {
 		session_start();
 		unset($_SESSION['Cart'][$this->request->param('id')]);
 
-		$this->redirect('/product/index');
+		$this->redirect('/product/viewcart');
 
 	}
 
@@ -100,9 +99,18 @@ class Controller_Product extends Controller {
 		
 	}
 
-	public function action_getcategorie()
+	public function action_categorie()
 	{
+		$categorie = $this->request->param('id');
+		$products = $this->productManager->getcategorie($categorie);
 
+		$view = View::Factory("product");
+		$view->products=$products;
+		$view->productManager = $this->productManager; 
+		$this->response->body($view);
 	}
+
+
+
 		
 } // End Welcome
