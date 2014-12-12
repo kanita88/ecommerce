@@ -158,7 +158,34 @@ section div.pagination p{
 	background-color: #778899;
 	padding: 7px;
 	border-radius: 5px;
+}
 
+.address h4{
+	color: #6495ED;
+	margin-left: 70px;
+}
+
+fieldset .address{
+	background-color: #6495ED
+}
+
+.address ul {
+	list-style-type : none;
+}
+
+.address ul li label
+{
+	display: block;
+	width: 150px;
+	float: left;
+	margin: 10px;
+}
+
+.address ul li input{
+	
+	width: 35%;
+	border-radius: 20px;
+	margin: 10px;
 }
 
 table {
@@ -186,6 +213,10 @@ tr td{
 	background-color: rgba(0,0,0,0.4);
 	color: red;
 
+}
+
+td{
+	width: 40%;
 }
 
 tfoot tr th{
@@ -355,10 +386,11 @@ aside .aside p:last-child a{
 	color: white;
 }
 
-aside div.recap button{
+.recap button {
 	background-color: #F0F8FF; 
 	border-radius: 10px;
 	margin : 10px;
+	color: black;
 }
 
 aside button.sup{

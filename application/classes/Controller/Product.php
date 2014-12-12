@@ -8,6 +8,7 @@ class Controller_Product extends Controller {
 
 	function before()
 	{
+		session_start();
 		parent::before();
 		$this->productManager = new Model_ProductManager();
 		$this->userManager = new Model_UserManager();
@@ -16,7 +17,7 @@ class Controller_Product extends Controller {
 
 	public function action_index()
 	{
-		session_start();
+	
 		$products = $this->productManager->getlatestproduct(0,6); //0 et 6 valeurs
 		
 		$view = View::Factory("product");
@@ -27,7 +28,7 @@ class Controller_Product extends Controller {
 
 	public function action_detail()
 	{
-		session_start();
+	
 		$id = $this->request->param('id');
 		$product = $this->productManager->getProduct($id);
 		
@@ -38,7 +39,7 @@ class Controller_Product extends Controller {
 
 	public function action_addproduct()
 	{
-		session_start();
+	
 		if(isset($_SESSION['admin'])==false || $_SESSION['admin'] !=1 )
 		{
 			$this->redirect('user/login');
@@ -60,7 +61,7 @@ class Controller_Product extends Controller {
 
 	public function action_addcart()
 	{
-		session_start();
+	
 		if (!isset($_SESSION["Cart"]))
 		{
 			$_SESSION['Cart']=array();
@@ -73,7 +74,7 @@ class Controller_Product extends Controller {
 
 	public function action_deleteCart()
 	{
-		session_start();
+	
 		unset($_SESSION['Cart'][$this->request->param('id')]);
 
 		$this->redirect('/product/viewcart');
@@ -82,7 +83,7 @@ class Controller_Product extends Controller {
 
 	public function action_viewcart()
 	{
-		session_start();
+	
 		if (!isset($_SESSION["Cart"]))
 		{
 			$_SESSION['Cart']=array();
@@ -110,6 +111,55 @@ class Controller_Product extends Controller {
 		$this->response->body($view);
 	}
 
+	public function action_add()
+	{
+	
+		$id = $this->request->param("id",false);
+		if($id == false)
+		{
+			$message = array("error" => "invalid_id");
+			echo json_encode($message);
+			return;
+		}
+		if (!isset($_SESSION["Cart"][$id]))
+		{
+			$_SESSION["Cart"][$id] = 1;
+		}
+		else
+		{
+			$_SESSION["Cart"][$id]++;
+		}
+		
+		$message = array("id" => $id, "quantity" => $_SESSION["Cart"][$id]);
+		echo json_encode($message);
+
+	}
+
+	public function action_sub()
+	{
+		$id = $this->request->param("id", false);
+		
+		if ($id == false)
+		{
+			$message = array("error" => "invalid id");
+			echo json_encode($message);
+			return;
+		}
+		
+		if (!isset($_SESSION["Cart"][$id]))
+		{
+			$message = array("error" => "not in Cart");
+			echo json_encode($message);
+			return;
+		}
+		else
+		{
+			$_SESSION["Cart"][$id]--;
+		}
+		
+		$message = array("id" => $id, "quantity" => $_SESSION["Cart"][$id]);
+		echo json_encode($message);
+	}
 
 
 		

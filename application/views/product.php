@@ -105,9 +105,7 @@
 						<?php endforeach ?>
 
 						<div class = "recap">
-							<form action="">
-								<button><a href="<?=URL::base()?>product/viewcart">Récapitulatif de votre panier</a></button>
-							</form>
+							<a href="<?=URL::base()?>product/viewcart"><button>Récapitulatif de votre panier</button></a>
 						</div>
 					<?php endif ?>
 					
